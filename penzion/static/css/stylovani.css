@@ -1,0 +1,27 @@
+/*---------------------------Navbar---------------------------------------*/
+.custom-navbar {
+    background-color: #0A0E60;
+    color: white;
+}
+
+.custom-navbar .icon-bar a i {
+    color: white;
+}
+
+.custom-navbar .icon-bar a:hover i {
+    color: #ddd; /* třeba světlejší při hoveru */
+}
+
+
+#img-tip {
+    width: 400px;
+}
+
+/*---------------------------Cenik---------------------------------------*/
+tbody {
+    background: linear-gradient(to bottom, #4967cf, #b5c3fa);
+}
+
+.price_description{
+    font-size: 8px;
+}

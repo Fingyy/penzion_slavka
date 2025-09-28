@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Kontakt{% endblock %}
+{% block content %}
+    <div class="container-sm my-5">
+        <div class="text-center mb-4">
+            <h2>Ceník</h2>
+            <h5>Můžeme ubytovat až 36 osob v 11 pokojích.</h5>
+        </div>
+
+        <table class="table table-bordered table-striped text-center align-middle">
+            <tbody>
+            <tr>
+                <td class="text-start">
+                    Dvoulůžkový pokoj - 1 osoba / 1 noc
+                    <div class="small text-muted">cena platí po celou dobu pobytu</div>
+                </td>
+                <td class="text-end align-top">795 Kč</td>
+            </tr>
+
+            <tr>
+                <td class="text-start">Dvoulůžkový pokoj - 2 osoby / 1 noc / cena za 1 osobu</td>
+                <td class="text-end align-top">750 Kč</td>
+            </tr>
+
+            <tr>
+                <td class="text-start">Dvoulůžkový pokoj - 2 osoby / od 2 nocí / cena za 1 osobu</td>
+                <td class="text-end align-top">675 Kč</td>
+            </tr>
+
+            <tr>
+                <td class="text-start">
+                    Dítě do 3 let
+                    <div class="small text-muted">bez nároku na lůžko</div>
+                </td>
+                <td class="text-end align-top">Zdarma</td>
+            </tr>
+
+            <tr>
+                <td class="text-start">
+                    Děti 3 až 12 let / noc
+                    <div class="small text-muted">včetně snídaně</div>
+                </td>
+                <td class="text-end align-top">375 Kč</td>
+            </tr>
+
+            <tr>
+                <td class="text-start">Dětská postýlka zapůjčení / 1 den</td>
+                <td class="text-end align-top">50 Kč</td>
+            </tr>
+
+            <tr>
+                <td class="text-start">
+                    Ubytovací poplatek obci
+                    <div class="small text-muted">platí osoby starší 18 let</div>
+                </td>
+                <td class="text-end align-top">10 Kč</td>
+            </tr>
+
+            </tbody>
+        </table>
+
+        <div class="fw-semibold">Ceny jsou smluvní.</div>
+        <div class="fw-semibold">Snídaně je v cenně ubytování.</div>
+        <div class="fw-semibold">Firemní ubytování dle dohody.</div>
+
+    </div>
+
+{% endblock %}
