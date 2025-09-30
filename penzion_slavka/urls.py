@@ -19,7 +19,7 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
-from penzion.views import HomeView, OkoliView, KontaktView, CenikView
+from penzion.views import HomeView, OkoliView, KontaktView, CenikView, PokojeView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,6 +27,7 @@ urlpatterns = [
     path('okoli/', OkoliView.as_view(), name='okoli'),
     path('kontakt', KontaktView.as_view(), name='kontakt'),
     path('cenik', CenikView.as_view(), name='cenik'),
+    path('pokoje', PokojeView.as_view(), name='pokoje'),
 ]
 
 if settings.DEBUG:

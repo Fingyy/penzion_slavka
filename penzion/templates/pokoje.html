@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Pokoje{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="text-center mb-4">
+            <h2>Pokoje a jejich vybavení</h2>
+        </div>
+
+        <div class="row">
+            <div class="col d-flex justify-content-center align-items-center">
+                <img id="img-tip" src="{% static 'media/room/DSC_7804-768x512.jpg' %}"
+                     alt="Chybějící obrázek pokoje" class="img-fluid>">
+            </div>
+
+            <div class="col d-flex flex-column justify-content-center">
+                <h5>
+                    Penzion Slávka pronajímá útulně zařízené dvou, tří a čtyřlůžkové pokoje vybavené
+                </h5>
+                <ul>
+                    <li>samostatnou koupelnou s umyvadlem, sprchovým koutem a sociálním zařízením</li>
+                    <li>komfortními postelemi</li>
+                    <li>posezením</li>
+                    <li>úložnými prostory</li>
+                </ul>
+                <p>
+                    Na každém pokoji je TV a Wi-Fi připojení k internetu.
+                </p>
+                <div class="text-center">
+                    <button type="button" class="btn btn-success">Rezervace</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="{% static 'media/room/DSC_7680-768x510.jpg' %}" alt=""></div>
+                <div class="swiper-slide"><img src="{% static 'media/room/DSC_7786-768x512.jpg' %}" alt=""></div>
+                <div class="swiper-slide"><img src="{% static 'media/room/DSC_7797-768x512.jpg' %}" alt=""></div>
+                <div class="swiper-slide"><img src="{% static 'media/room/DSC_7810-768x512.jpg' %}" alt=""></div>
+                <div class="swiper-slide"><img src="{% static 'media/room/DSC_7812-768x512.jpg' %}" alt=""></div>
+                <div class="swiper-slide"><img src="{% static 'media/room/DSC_7826-768x512.jpg' %}" alt=""></div>
+            </div>
+
+            <!-- Šipky -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+
+            <!-- Tečky -->
+            <div class="swiper-pagination"></div>
+        </div>
+
+    </div>
+
+
+{% endblock %}

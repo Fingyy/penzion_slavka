@@ -16,3 +16,7 @@ class KontaktView(TemplateView):
 
 class CenikView(TemplateView):
     template_name = 'cenik.html'
+
+
+class PokojeView(TemplateView):
+    template_name = 'pokoje.html'
