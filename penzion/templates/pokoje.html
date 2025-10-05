@@ -32,26 +32,43 @@
                 </div>
             </div>
         </div>
-
-        <div class="swiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="{% static 'media/room/DSC_7680-768x510.jpg' %}" alt=""></div>
-                <div class="swiper-slide"><img src="{% static 'media/room/DSC_7786-768x512.jpg' %}" alt=""></div>
-                <div class="swiper-slide"><img src="{% static 'media/room/DSC_7797-768x512.jpg' %}" alt=""></div>
-                <div class="swiper-slide"><img src="{% static 'media/room/DSC_7810-768x512.jpg' %}" alt=""></div>
-                <div class="swiper-slide"><img src="{% static 'media/room/DSC_7812-768x512.jpg' %}" alt=""></div>
-                <div class="swiper-slide"><img src="{% static 'media/room/DSC_7826-768x512.jpg' %}" alt=""></div>
-            </div>
-
-            <!-- Šipky -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-
-            <!-- Tečky -->
-            <div class="swiper-pagination"></div>
-        </div>
-
     </div>
 
+    <!-- Carousel na obrázky -->
+    <div class="gallery-swiper swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="{% static 'media/room/DSC_7680-768x510.jpg' %}"
+                                           alt="Chybějící obrázek pokoje">
+            </div>
+            <div class="swiper-slide"><img src="{% static 'media/room/DSC_7786-768x512.jpg' %}"
+                                           alt="Chybějící obrázek pokoje">
+            </div>
+            <div class="swiper-slide"><img src="{% static 'media/room/DSC_7797-768x512.jpg' %}"
+                                           alt="Chybějící obrázek pokoje">
+            </div>
+            <div class="swiper-slide"><img src="{% static 'media/room/DSC_7810-768x512.jpg' %}"
+                                           alt="Chybějící obrázek pokoje">
+            </div>
+            <div class="swiper-slide"><img src="{% static 'media/room/DSC_7812-768x512.jpg' %}"
+                                           alt="Chybějící obrázek pokoje">
+            </div>
+            <div class="swiper-slide"><img src="{% static 'media/room/DSC_7826-768x512.jpg' %}"
+                                           alt="Chybějící obrázek pokoje">
+            </div>
+        </div>
+
+        <!-- Šipky -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+
+        <!-- Tečky -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Swiper JS knihovna -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- nacteni JS souboru -->
+    <script src="{% static 'js/main.js' %}"></script>
 
 {% endblock %}

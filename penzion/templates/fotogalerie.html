@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Fotogalerie{% endblock %}
+{% block content %}
+    <div class="container">
+        <h2 class="text-center mb-4">Fotogalerie</h2>
+        <div class="row justify-content-center g-0">
+            <div class="col-6 col-md-3 d-flex justify-content-center">
+                <img src="{% static 'media/gallery/DSC_7643-768x512.jpg' %}" alt="Chybějící obrázek penzionu"
+                     class="img-fluid gallery-img">
+            </div>
+            <div class="col-6 col-md-3 d-flex justify-content-center">
+                <img src="{% static 'media/gallery/DSC_7717-768x540.jpg' %}" alt="Chybějící obrázek penzionu"
+                     class="img-fluid gallery-img">
+            </div>
+            <div class="col-6 col-md-3 d-flex justify-content-center">
+                <img src="{% static 'media/gallery/DSC_7718-1.jpg' %}" alt="Chybějící obrázek penzionu"
+                     class="img-fluid gallery-img">
+            </div>
+            <div class="col-6 col-md-3 d-flex justify-content-center">
+                <img src="{% static 'media/gallery/DSC_7769-768x515.jpg' %}" alt="Chybějící obrázek penzionu"
+                     class="img-fluid gallery-img">
+            </div>
+            <div class="col-6 col-md-3 d-flex justify-content-center">
+                <img src="{% static 'media/gallery/DSC_7770-removebg-preview.png' %}" alt="Chybějící obrázek penzionu"
+                     class="img-fluid gallery-img">
+            </div>
+            <div class="col-6 col-md-3 d-flex justify-content-center">
+                <img src="{% static 'media/gallery/DSC_7776.jpg' %}" alt="Chybějící obrázek penzionu"
+                     class="img-fluid gallery-img">
+            </div>
+            <div class="col-6 col-md-3 d-flex justify-content-center">
+                <img src="{% static 'media/gallery/DSC_7826-768x512.jpg' %}" alt="Chybějící obrázek penzionu"
+                     class="img-fluid gallery-img">
+            </div>
+            <div class="col-6 col-md-3 d-flex justify-content-centr">
+                <img src="{% static 'media/gallery/DSC_7857-768x512.jpg' %}" alt="Chybějící obrázek penzionu"
+                     class="img-fluid gallery-img">
+            </div>
+            <div class="col-6 col-md-3 d-flex justify-content-centr">
+                <img src="{% static 'media/gallery/DSC_8393-768x512.jpg' %}" alt="Chybějící obrázek penzionu"
+                     class="img-fluid gallery-img">
+            </div>
+            <div class="col-6 col-md-3 d-flex justify-content-centr">
+                <img src="{% static 'media/gallery/DSC_8408-768x512.jpg' %}" alt="Chybějící obrázek penzionu"
+                     class="img-fluid gallery-img">
+            </div>
+            <div class="col-6 col-md-3 d-flex justify-content-centr">
+                <img src="{% static 'media/gallery/DSC_8427-768x432.jpg' %}" alt="Chybějící obrázek penzionu"
+                     class="img-fluid gallery-img">
+            </div>
+            <div class="col-6 col-md-3 d-flex justify-content-centr">
+                <img src="{% static 'media/gallery/bez-bazenu-768x512.jpg' %}" alt="Chybějící obrázek penzionu"
+                     class="img-fluid gallery-img">
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox d-flex justify-content-center align-items-center">
+        <span id="closeBtn" class="close">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+        <div id="counter" class="counter"></div>
+        <span id="prevBtn" class="arrow left">&#10094;</span>
+        <span id="nextBtn" class="arrow right">&#10095;</span>
+    </div>
+{% endblock %}
+
+            

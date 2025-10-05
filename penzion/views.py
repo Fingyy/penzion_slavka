@@ -20,3 +20,7 @@ class CenikView(TemplateView):
 
 class PokojeView(TemplateView):
     template_name = 'pokoje.html'
+
+
+class FotogalerieView(TemplateView):
+    template_name = 'fotogalerie.html'

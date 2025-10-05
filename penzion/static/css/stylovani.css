@@ -22,6 +22,46 @@ tbody {
     background: linear-gradient(to bottom, #4967cf, #b5c3fa);
 }
 
-.price_description{
+.price_description {
     font-size: 8px;
+}
+
+/*---------------------------Pokoje-------------------------------------*/
+/* galerie má vlastní maximální šířku */
+.gallery-swiper {
+  max-width: 900px;     /* 3 obrázky vedle sebe */
+  margin: 50px auto;    /* vystředění */
+}
+
+/*!* každý slide *!*/
+.gallery-swiper .swiper-slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+
+
+.centered-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/*---------------------------Forogalerie-------------------------------------*/
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9);
+  z-index: 1050;
+  flex-direction: column;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 6px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
 }

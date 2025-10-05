@@ -24,10 +24,12 @@
         background-color: transparent;
         box-shadow: inset 0 -2px 0 white;
     }
-{#.navbar {#}
-{#    background-color: rgba(33, 71, 143, 0.96);#}
-{#    color: white;#}
-{#}#}
+
+    {#.navbar {#}
+    {#    background-color: rgba(33, 71, 143, 0.96);#}
+    {#    color: white;#}
+    {
+    #}#}
 
 </style>
 <nav class="navbar navbar-expand-lg navbar-dark custom-navbar sticky-top">
@@ -56,11 +58,15 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Fotogalerie</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'fotogalerie' %}">Fotogalerie</a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'okoli' %}">Okolí</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Rezervace</a>
                     </li>
 
                     <li class="nav-item">
