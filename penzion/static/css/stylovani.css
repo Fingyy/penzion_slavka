@@ -47,6 +47,18 @@ tbody {
 }
 
 /*---------------------------Fotogalerie-------------------------------------*/
+.gallery-img {
+  border-radius: 6px;
+  cursor: pointer; /* změna kurzoru na ruku při najetí */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05); /* obrázek se zvětší o 5 % */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* jemný stín pro zvýraznění */
+  z-index: 2; /* zajistí, že se obrázek dostane nad ostatní */
+}
+
 .lightbox {
     display: none; /* schovaný, dokud se neotevře */
     position: fixed;
@@ -59,13 +71,6 @@ tbody {
     background: rgba(0, 0, 0, 0.9); /* ← toto způsobí zatmavení ztmavení (90% neprůhlednost */
     z-index: 1050; /* určuje “vrstvu”, na které se lightbox zobrazí */
     flex-direction: column; /* uspořádává vnitřní prvky lightboxu (šipky, křížek...) pod sebe ve sloupci. */
-
-
-     /* 💪 Flexbox pro vystředění obsahu */
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    flex-direction: column;
 }
 
 .lightbox img {
@@ -76,4 +81,77 @@ tbody {
     height: auto;
     border-radius: 6px;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); /* světlý stín kolem obrázku */
+}
+
+/* Zavírat tlačítko (vpravo nahoře) */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 48px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 1100;
+}
+.close:hover {
+    color: #ff5555;
+}
+
+/* Čítač vlevo nahoře */
+.counter {
+    position: absolute;
+    top: 25px;
+    left: 30px;
+    font-size: 22px;
+    font-weight: 500;
+    color: #ffffffcc;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 6px 14px;
+    border-radius: 8px;
+    letter-spacing: 1px;
+}
+
+/* Šipky po stranách obrázku */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 60px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    padding: 20px;
+    transition: color 0.3s ease, transform 0.2s ease;
+    z-index: 1100;
+}
+.arrow:hover {
+    color: #ffd700;
+    transform: translateY(-50%) scale(1.2);
+}
+
+/* Levá a pravá šipka */
+.arrow.left {
+    left: 60px;
+}
+.arrow.right {
+    right: 60px;
+}
+
+/* Responzivní úprava pro menší obrazovky */
+@media (max-width: 768px) {
+    .arrow {
+        font-size: 40px;
+        padding: 10px;
+    }
+    .close {
+        font-size: 36px;
+        right: 20px;
+    }
+    .counter {
+        font-size: 18px;
+        left: 15px;
+        top: 15px;
+    }
 }

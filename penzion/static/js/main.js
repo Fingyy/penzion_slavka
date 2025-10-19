@@ -37,7 +37,7 @@ const counter = document.getElementById('counter');
 
 let currentIndex = 0;
 
-function showLightbox(index) {
+;function showLightbox(index) {
   lightbox.style.display = 'flex';
   lightboxImg.src = images[index].src;
   currentIndex = index;
@@ -65,4 +65,4 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {lightbox.style.display = 'none';}
   if (e.key === 'ArrowRight') {nextBtn.click()}
   if (e.key === 'ArrowLeft') {prevBtn.click()}
-})
+});
