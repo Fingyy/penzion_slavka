@@ -24,3 +24,7 @@ class PokojeView(TemplateView):
 
 class FotogalerieView(TemplateView):
     template_name = 'fotogalerie.html'
+
+
+class RezervaceView(TemplateView):
+    template_name = 'rezervace.html'

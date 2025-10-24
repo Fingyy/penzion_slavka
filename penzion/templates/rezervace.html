@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Rezervace{% endblock %}7
+{% block content %}
+    <div class="container text-left">
+        <h2 class="text-center">Rezervace</h2>
+        <form>
+            <div class="row">
+                <div class="col mb-2">
+                    <label for="InputFirstName" class="form-label">Jméno</label>
+                    <input type="text" class="form-control" id="InputFirstName" placeholder="Karel" required>
+                </div>
+
+                <div class="col mb-2">
+                    <label for="InputLastName" class="form-label">Příjmení</label>
+                    <input type="text" class="form-control" id="InputLastName" placeholder="Novák" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col mb-2">
+                    <label for="InputAddress" class="form-label">Ulice/číslo popisné</label>
+                    <input type="text" class="form-control" id="InputAddress" placeholder="Hlavní 1" required>
+                </div>
+                <div class="col mb-2">
+                    <label for="InputPostalCode" class="form-label">PSČ</label>
+                    <input type="number" class="form-control" id="InputPostalCode" placeholder="53843" required>
+                </div>
+                <div class="col mb-2">
+                    <label for="InputCity" class="form-label">Město</label>
+                    <input type="text" class="form-control" id="InputCity" placeholder="Třemošnice" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col mb-2">
+                    <label for="InputEmail" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" required
+                           placeholder="karel.novak@email.com">
+                    <div id="emailHelp" class="form-text">Email nebude sdílen s žádnou třetí stranou.</div>
+                </div>
+                <div class="col mb-2">
+                    <label for="InputPhone" class="form-label">Telefon</label>
+                    <input type="tel" class="form-control" id="InputPhone" name="phone" pattern="[0-9]{9}$"
+                           maxlength="9"
+                           inputmode="numeric" required placeholder="731488405">
+                    <div class="invalid-feedback">Zadajte telefonní číslo ve správném tvaru.</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col mb-2">
+                    <label for="InputArriveDate" class="form-label">Datum příjezdu</label>
+                    <input type="date" class="form-control" id="InputArriveDate" required>
+                </div>
+                <div class="col mb-2">
+                    <label for="InputDepartureDate" class="form-label">Datum odjezdu</label>
+                    <input type="date" class="form-control" id="InputDepartureDate" required>
+                </div>
+                <div class="col mb-2">
+                    <label for="InputNoNights" class="form-label">Počet nocí</label>
+                    <input type="number" class="form-control" id="InputNoNights" name="nights" min="1" step="1" required
+                           placeholder="Zadejte počet nocí">
+                    <div class="invalid-feedback">
+                        Počet nocí musí být alespoň 1.
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Zpráva pro penzion</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+
+            <div class="mb-2 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Odeslat</button>
+        </form>
+    </div>
+
+{% endblock %}
