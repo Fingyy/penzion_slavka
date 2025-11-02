@@ -9,74 +9,80 @@
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-6">
                 <form class="border border-secondary rounded p-4">
+                    {% csrf_token %}
                     <div class="row mb-2">
                         <div class="col mb-2">
-                            <label for="inputFirstName" class="form-label">Jméno</label>
-                            <input type="text" class="form-control" id="inputFirstName" name="first_name"
-                                   placeholder="Karel"
-                                   required>
+                            <label for="{{ form.first_name.id_for_label }}" class="form-label">Jméno</label>
+                            <div>
+                                {{ form.first_name }}
+                            </div>
                         </div>
 
                         <div class="col mb-2">
-                            <label for="inputLastName" class="form-label">Příjmení</label>
-                            <input type="text" class="form-control" id="inputLastName" name="last_name"
-                                   placeholder="Novák"
-                                   required>
+                            <label for="{{ form.last_name.id_for_label }}" class="form-label">Příjmení</label>
+                            <div>
+                                {{ form.last_name }}
+                            </div>
                         </div>
                     </div>
 
                     <div class="row mb-2">
                         <div class="col mb-2">
-                            <label for="inputAddress" class="form-label">Ulice/číslo popisné</label>
-                            <input type="text" class="form-control" id="inputAddress" name="address"
-                                   placeholder="Hlavní 1"
-                                   required>
+                            <label for="{{ form.address.id_for_label }}" class="form-label">Ulice/číslo popisné</label>
+                            <div>
+                                {{ form.address }}
+                            </div>
                         </div>
                         <div class="col mb-2">
-                            <label for="inputPostalCode" class="form-label">PSČ</label>
-                            <input type="text" class="form-control" id="inputPostalCode" name="postal_code"
-                                   placeholder="53843" pattern="\d{5}" maxlength="5" inputmode="numeric" required>
+                            <label for="{{ form.postal_code.id_for_label }}" class="form-label">PSČ</label>
+                            <div>
+                                {{ form.postal_code }}
+                            </div>
                             <div class="invalid-feedback">Zadajte telefonní číslo ve správném tvaru.</div>
                         </div>
                         <div class="col mb-2">
-                            <label for="inputCity" class="form-label">Město</label>
-                            <input type="text" class="form-control" id="inputCity" name="city" placeholder="Třemošnice"
-                                   required>
+                            <label for="{{ form.city.id_for_label }}" class="form-label">Město</label>
+                            <div>
+                                {{ form.city }}
+                            </div>
                         </div>
                     </div>
 
                     <div class="row mb-2">
                         <div class="col mb-2">
-                            <label for="inputEmail" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="inputEmail" name="email"
-                                   aria-describedby="emailHelp"
-                                   required
-                                   placeholder="karel.novak@email.com">
+                            <label for="{{ form.email.id_for_label }}" class="form-label">Email</label>
+                            <div>
+                                {{ form.email }}
+                            </div>
                             <div id="emailHelp" class="form-text">Email nebude sdílen s žádnou třetí stranou.</div>
                         </div>
                         <div class="col mb-2">
-                            <label for="inputPhone" class="form-label">Telefon</label>
-                            <input type="tel" class="form-control" id="inputPhone" name="phone" pattern="[0-9]{9}$"
-                                   maxlength="9" inputmode="numeric" required placeholder="731488405">
+                            <label for="{{ form.phone.id_for_label }}" class="form-label">Telefon</label>
+                            <div>
+                                {{ form.phone }}
+                            </div>
                             <div class="invalid-feedback">Zadajte telefonní číslo ve správném tvaru.</div>
                         </div>
                     </div>
 
                     <div class="row mb-2">
                         <div class="col mb-2">
-                            <label for="inputArriveDate" class="form-label">Datum příjezdu</label>
-                            <input type="date" class="form-control" id="inputArriveDate" name="arrive_date" required>
+                            <label for="{{ form.arrive_date.id_for_label }}" class="form-label">Datum příjezdu</label>
+                            <div>
+                                {{ form.arrive_date }}
+                            </div>
                         </div>
                         <div class="col mb-2">
-                            <label for="inputDepartureDate" class="form-label">Datum odjezdu</label>
-                            <input type="date" class="form-control" id="inputDepartureDate" name="departure_date"
-                                   required>
+                            <label for="{{ form.departure_date.id_for_label }}" class="form-label">Datum odjezdu</label>
+                            <div>
+                                {{ form.departure_date }}
+                            </div>
                         </div>
                         <div class="col mb-2">
-                            <label for="inputNoNights" class="form-label">Počet nocí</label>
-                            <input type="number" class="form-control" id="inputNoNights" name="nights" min="1" step="1"
-                                   required
-                                   placeholder="0">
+                            <label for="{{ form.no_of_nights.id_for_label }}" class="form-label">Počet nocí</label>
+                            <div>
+                                {{ form.no_of_nights }}
+                            </div>
                             <div class="invalid-feedback">
                                 Počet nocí musí být alespoň 1.
                             </div>
@@ -85,31 +91,36 @@
 
                     <div class="row mb-2">
                         <div class="col mb-2">
-                            <label for="inputNoAdults" class="form-label">Počet dospělých osob</label>
-                            <input type="number" class="form-control" id="inputNoAdults" name="no_adults" min="1"
-                                   step="1"
-                                   required placeholder="0">
+                            <label for="{{ form.no_of_adults.id_for_label }}" class="form-label">Počet dospělých
+                                osob</label>
+                            <div>
+                                {{ form.no_of_adults }}
+                            </div>
                         </div>
                         <div class="col mb-2">
-                            <label for="inputNoKids" class="form-label">Počet dětí od 3 do 12 let</label>
-                            <input type="number" class="form-control" id="inputNoKids" name="no_kids" min="0" step="1"
-                                   required placeholder="0">
+                            <label for="{{ form.no_of_kids.id_for_label }}" class="form-label">Počet dětí od 3 do 12
+                                let</label>
+                            <div>
+                                {{ form.no_of_kids }}
+                            </div>
                         </div>
                     </div>
 
                     <div class="row mb-2">
                         <div class="col mb-2">
-                            <label for="inputNoRooms" class="form-label">Počet pokojů</label>
-                            <input type="number" class="form-control" id="inputNoRooms" name="no_rooms" min="1" step="1"
-                                   required placeholder="0">
+                            <label for="{{ form.no_of_rooms.id_for_label }}" class="form-label">Počet pokojů</label>
+                            <div>
+                                {{ form.no_of_rooms }}
+                            </div>
                             <div class="invalid-feedback">
                                 Počet pokojů musí být větší jak 0.
                             </div>
                         </div>
                         <div class="col mb-2">
-                            <label for="inputRoomType" class="form-label">Typ pokoje</label>
-                            <input type="text" class="form-control" id="inputRoomType" name="room_type"
-                                   placeholder="vyberte typ pokoje">
+                            <label for="{{ form.room_type.id_for_label }}" class="form-label">Typ pokoje</label>
+                            <div>
+                                {{ form.room_type }}
+                            </div>
                             <div class="invalid-feedback">
                                 Typ pokoje musí být vybrán.
                             </div>
@@ -117,14 +128,12 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="description" class="form-label">Zpráva pro penzion</label>
-                        <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+                        <label for="{{ form.description.id_for_label }}" class="form-label">Zpráva pro penzion</label>
+                        <div>
+                            {{ form.description }}
+                        </div>
                     </div>
-
-                    <div class="mb-2 form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                    </div>
+                    
                     <button type="submit" class="btn btn-primary">Odeslat</button>
                 </form>
             </div>

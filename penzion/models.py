@@ -24,9 +24,9 @@ class Order(models.Model):
     departure_date = models.DateField()
     no_of_nights = models.IntegerField(validators=[MinValueValidator(1)])
     no_of_adults = models.IntegerField(validators=[MinValueValidator(1)])
-    no_of_children = models.IntegerField(blank=True)
+    no_of_kids = models.IntegerField(blank=True)
     no_of_rooms = models.IntegerField(blank=True)
-    room_type = models.ManyToManyField(RoomType)
+    room_type = models.ForeignKey(RoomType, on_delete=models.CASCADE)
     description = models.TextField(blank=True)
 
     def __str__(self):
