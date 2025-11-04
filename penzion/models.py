@@ -1,3 +1,5 @@
+import uuid
+
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.core.exceptions import ValidationError
@@ -13,6 +15,7 @@ class RoomType(models.Model):
 
 
 class Order(models.Model):
+    order_id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     first_name = models.CharField(max_length=15)
     last_name = models.CharField(max_length=20)
     address = models.CharField(max_length=50)
