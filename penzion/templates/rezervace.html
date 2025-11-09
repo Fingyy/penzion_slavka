@@ -8,13 +8,25 @@
 
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-6">
-                <form class="border border-secondary rounded p-4">
+                <form method="post" class="border border-secondary rounded p-4">
                     {% csrf_token %}
+                    <!-- ✅ zobrazí celkové chyby z clean() -->
+                    {% if form.non_field_erros %}
+                        <div class="alert alert-danger">
+                            {% for error in form.non_field_erros %}
+                                <div>{{ error }}</div>
+                            {% endfor %}
+                        </div>
+
+                    {% endif %}
                     <div class="row mb-2">
                         <div class="col mb-2">
                             <label for="{{ form.first_name.id_for_label }}" class="form-label">Jméno</label>
                             <div>
                                 {{ form.first_name }}
+                                {% for error in form.first_name.errors %}
+                                    <div class="text-danger small">{{ error }}</div>
+                                {% endfor %}
                             </div>
                         </div>
 
@@ -22,6 +34,9 @@
                             <label for="{{ form.last_name.id_for_label }}" class="form-label">Příjmení</label>
                             <div>
                                 {{ form.last_name }}
+                                {% for error in form.last_name.errors %}
+                                    <div class="text-danger small">{{ error }}</div>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
@@ -31,19 +46,27 @@
                             <label for="{{ form.address.id_for_label }}" class="form-label">Ulice/číslo popisné</label>
                             <div>
                                 {{ form.address }}
+                                {% for error in form.address.errors %}
+                                    <div class="text-danger small">{{ error }}</div>
+                                {% endfor %}
                             </div>
                         </div>
                         <div class="col mb-2">
                             <label for="{{ form.postal_code.id_for_label }}" class="form-label">PSČ</label>
                             <div>
                                 {{ form.postal_code }}
+                                {% for error in form.postal_code.errors %}
+                                    <div class="text-danger small">{{ error }}</div>
+                                {% endfor %}
                             </div>
-                            <div class="invalid-feedback">Zadajte telefonní číslo ve správném tvaru.</div>
                         </div>
                         <div class="col mb-2">
                             <label for="{{ form.city.id_for_label }}" class="form-label">Město</label>
                             <div>
                                 {{ form.city }}
+                                {% for error in form.city.errors %}
+                                    <div class="text-danger small">{{ error }}</div>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
@@ -53,15 +76,19 @@
                             <label for="{{ form.email.id_for_label }}" class="form-label">Email</label>
                             <div>
                                 {{ form.email }}
+                                {% for error in form.email.errors %}
+                                    <div class="text-danger small">{{ error }}</div>
+                                {% endfor %}
                             </div>
-                            <div id="emailHelp" class="form-text">Email nebude sdílen s žádnou třetí stranou.</div>
                         </div>
                         <div class="col mb-2">
                             <label for="{{ form.phone.id_for_label }}" class="form-label">Telefon</label>
                             <div>
                                 {{ form.phone }}
+                                {% for error in form.phone.errors %}
+                                    <div class="text-danger small">{{ error }}</div>
+                                {% endfor %}
                             </div>
-                            <div class="invalid-feedback">Zadajte telefonní číslo ve správném tvaru.</div>
                         </div>
                     </div>
 
@@ -70,21 +97,27 @@
                             <label for="{{ form.arrive_date.id_for_label }}" class="form-label">Datum příjezdu</label>
                             <div>
                                 {{ form.arrive_date }}
+                                {% for error in form.arrive_date.errors %}
+                                    <div class="text-danger small">{{ error }}</div>
+                                {% endfor %}
                             </div>
                         </div>
                         <div class="col mb-2">
                             <label for="{{ form.departure_date.id_for_label }}" class="form-label">Datum odjezdu</label>
                             <div>
                                 {{ form.departure_date }}
+                                {% for error in form.departure_date.errors %}
+                                    <div class="text-danger small">{{ error }}</div>
+                                {% endfor %}
                             </div>
                         </div>
                         <div class="col mb-2">
                             <label for="{{ form.no_of_nights.id_for_label }}" class="form-label">Počet nocí</label>
                             <div>
                                 {{ form.no_of_nights }}
-                            </div>
-                            <div class="invalid-feedback">
-                                Počet nocí musí být alespoň 1.
+                                {% for error in form.no_of_nights.errors %}
+                                    <div class="text-danger small">{{ error }}</div>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
@@ -95,6 +128,9 @@
                                 osob</label>
                             <div>
                                 {{ form.no_of_adults }}
+                                {% for error in form.no_of_adults.errors %}
+                                    <div class="text-danger small">{{ error }}</div>
+                                {% endfor %}
                             </div>
                         </div>
                         <div class="col mb-2">
@@ -102,6 +138,9 @@
                                 let</label>
                             <div>
                                 {{ form.no_of_kids }}
+                                {% for error in form.no_of_kids.errors %}
+                                    <div class="text-danger small">{{ error }}</div>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
@@ -111,18 +150,18 @@
                             <label for="{{ form.no_of_rooms.id_for_label }}" class="form-label">Počet pokojů</label>
                             <div>
                                 {{ form.no_of_rooms }}
-                            </div>
-                            <div class="invalid-feedback">
-                                Počet pokojů musí být větší jak 0.
+                                {% for error in form.no_of_rooms.errors %}
+                                    <div class="text-danger small">{{ error }}</div>
+                                {% endfor %}
                             </div>
                         </div>
                         <div class="col mb-2">
                             <label for="{{ form.room_type.id_for_label }}" class="form-label">Typ pokoje</label>
                             <div>
                                 {{ form.room_type }}
-                            </div>
-                            <div class="invalid-feedback">
-                                Typ pokoje musí být vybrán.
+                                {% for error in form.room_type.errors %}
+                                    <div class="text-danger small">{{ error }}</div>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
@@ -131,9 +170,12 @@
                         <label for="{{ form.description.id_for_label }}" class="form-label">Zpráva pro penzion</label>
                         <div>
                             {{ form.description }}
+                            {% for error in form.description.errors %}
+                                    <div class="text-danger small">{{ error }}</div>
+                                {% endfor %}
                         </div>
                     </div>
-                    
+
                     <button type="submit" class="btn btn-primary">Odeslat</button>
                 </form>
             </div>

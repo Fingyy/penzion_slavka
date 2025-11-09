@@ -127,10 +127,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'penzion/static/media')
 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+EMAIL_HOST = 'smtp.gmail.com'  # Adresa SMTP serveru
+EMAIL_PORT = 587  # Port SMTP serveru
+EMAIL_USE_TLS = True  # Zda se má použít zabezpečené připojení
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')  # Uživatelské jméno, tedy e-mailová adresa, z které se bude odesílat
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')  # Heslo nebo aplikační klíč k té e-mailové schránce
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER  # Adresa, která se zobrazí jako odesílatel (většinou stejná jako EMAIL_HOST_USER)
 SECRET_KEY = os.getenv('SECRET_KEY', 'dev-key-only-for-local')

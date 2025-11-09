@@ -63,7 +63,7 @@ class ReservationView(FormView):
             subject,
             message,
             settings.EMAIL_HOST_USER,
-            [tova.tremosnice@seznam.cz]  # příjemnce objednávek
+            [vojtech.michal@seznam.cz]  # příjemnce objednávek
         )
         return super().form_valid(form)
 

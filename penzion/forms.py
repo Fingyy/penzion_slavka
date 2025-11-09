@@ -9,6 +9,7 @@ class ReservationForm(forms.Form):
                                 widget=forms.TextInput(attrs={"class": "form-control"}))
     address = forms.CharField(label="Adresa", max_length=50, widget=forms.TextInput(attrs={"class": "form-control"}))
     postal_code = forms.CharField(label="PSČ",
+                                  min_length=5,
                                   max_length=5,
                                   widget=forms.TextInput(attrs={"class": "form-control",
                                                                 "placeholder": "53843"}))
@@ -16,8 +17,11 @@ class ReservationForm(forms.Form):
                            max_length=50,
                            widget=forms.TextInput(attrs={"class": "form-control",
                                                          "placeholder": "Třemošnice"}))
-    email = forms.EmailField(label="Email", widget=forms.EmailInput(attrs={"class": "form-control",
-                                                                           "placeholder": "karel.novak@email.cz"}))
+    email = forms.EmailField(label="Email",
+                             error_messages={"invalid": "Neplatný formát pro email.",
+                                             "required": "Zadejte svůj email."},
+                             widget=forms.EmailInput(attrs={"class": "form-control",
+                                                            "placeholder": "karel.novak@email.cz"}))
     phone = forms.CharField(label="Telefon", max_length=9, widget=forms.TextInput(attrs={"class": "form-control"}))
     arrive_date = forms.DateField(label="Datum příjezdu",
                                   widget=forms.DateInput(attrs={"type": "date",
@@ -33,6 +37,8 @@ class ReservationForm(forms.Form):
                                       widget=forms.NumberInput(attrs={"class": "form-control"}))
     no_of_kids = forms.IntegerField(label="Počet dětí od 3 do 12 let",
                                     required=False,
+                                    initial=0,
+                                    min_value=0,
                                     widget=forms.NumberInput(attrs={"class": "form-control"}))
     no_of_rooms = forms.IntegerField(label="Počet pokojů",
                                      min_value=1,
@@ -40,6 +46,7 @@ class ReservationForm(forms.Form):
     room_type = forms.ChoiceField(
         label="Typ pokoje",
         choices=[
+            ("", "Vyberte typ pokoje"),
             ("double_tog", "Dvoulůžkový, postele u sebe"),
             ("double_sep", "Dvoulůžkový, postele odděleně"),
             ("triple", "Třílůžkový"),
@@ -64,6 +71,6 @@ class ReservationForm(forms.Form):
 
         # Validace datumů
         if arrive_date and arrive_date <= today:
-            self.add_error("arrive_date", "Datum příjezdu musí být alespoň zítra.")
+            self.add_error("arrive_date", "Datum příjezdu musí být nejdříve následující den.")
         if arrive_date and departure_date and departure_date <= arrive_date:
             self.add_error("departure_date", "Datum odjezdu musí být alespoň den po příjezdu.")
