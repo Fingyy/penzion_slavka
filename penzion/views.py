@@ -40,7 +40,7 @@ class ReservationView(FormView):
 
     def form_valid(self, form):
         data = form.cleaned_data
-        subject = "Nová rezervace z webu penzionu"
+        subject = "Nová rezervace z webu penzionu Slávka"
         message = (
             f"Jméno: {data['first_name']}\n"
             f"Příjmení: {data['last_name']}\n"
@@ -57,13 +57,13 @@ class ReservationView(FormView):
             f"Počet pokojů: {data['no_of_rooms']}\n"
             f"Typ pokoje: {data['room_type']}\n"
             
-            f"Zpráva: {data['description'] or '(žádná)'}"
+            f"Zpráva: {data['description'] or 'žádná'}"
         )
         send_mail(
             subject,
             message,
             settings.EMAIL_HOST_USER,
-            [vojtech.michal@seznam.cz]  # příjemnce objednávek
+            ["vojtech.michal@seznam.cz"]  # příjemnce objednávek
         )
         return super().form_valid(form)
 
