@@ -43,7 +43,7 @@ class ReservationForm(forms.Form):
     postal_code = forms.CharField(
         label="PSČ",
         min_length=5,
-        max_length=5,
+        max_length=6,
         widget=forms.TextInput(attrs={
             "class": "form-control",
             "placeholder": "53843"
@@ -79,9 +79,14 @@ class ReservationForm(forms.Form):
     )
     phone = forms.CharField(
         label="Telefon",
-        max_length=9,
+        min_length=9,
+        max_length=15,
         widget=forms.TextInput(attrs={"class": "form-control"}
                                ),
+        error_messages={
+            "min_length": "Telefon musí mít alespoň 9 znaků.",
+            "required": "Uve%dte prosím svoje telefonní číslo",
+        },
         validators=[RegexValidator(regex=r'^\+?\d{9,15}$',
                                    message="Telefon musí obsahovat 9 až 15 číslic, může začínat +."
                                    )
@@ -101,11 +106,11 @@ class ReservationForm(forms.Form):
                                       }
                                )
     )
-    no_of_nights = forms.IntegerField(
-        label="Počet nocí",
-        min_value=1,
-        widget=forms.NumberInput(attrs={"class": "form-control"})
-    )
+    # no_of_nights = forms.IntegerField(
+    #     label="Počet nocí",
+    #     min_value=1,
+    #     widget=forms.NumberInput(attrs={"class": "form-control"})
+    # )
     no_of_adults = forms.IntegerField(
         label="Počet dospělých osob",
         min_value=1,
@@ -130,11 +135,11 @@ class ReservationForm(forms.Form):
         label="Typ pokoje",
         choices=[
             ("", "Vyberte typ pokoje"),
-            ("double_tog", "Dvoulůžkový, postele u sebe"),
-            ("double_sep", "Dvoulůžkový, postele odděleně"),
-            ("triple", "Třílůžkový"),
-            ("quad", "Čtyřlůžkový"),
-            ("combination", "Více pokojů uveďte do zprávy")
+            ("Dvoulůžkový, postele u sebe", "Dvoulůžkový, postele u sebe"),
+            ("Dvoulůžkový, postele odděleně", "Dvoulůžkový, postele odděleně"),
+            ("Třílůžkový", "Třílůžkový"),
+            ("Čtyřlůžkový", "Čtyřlůžkový"),
+            ("Více pokojů uveďte do zprávy", "Více pokojů uveďte do zprávy")
         ],
         widget=forms.Select(attrs={"class": "form-select"})
     )

@@ -51,7 +51,7 @@
                                 {% endfor %}
                             </div>
                         </div>
-                        <div class="col mb-2">
+                        <div class="col-2 mb-2">
                             <label for="{{ form.postal_code.id_for_label }}" class="form-label">PSČ</label>
                             <div>
                                 {{ form.postal_code }}
@@ -111,15 +111,15 @@
                                 {% endfor %}
                             </div>
                         </div>
-                        <div class="col mb-2">
-                            <label for="{{ form.no_of_nights.id_for_label }}" class="form-label">Počet nocí</label>
-                            <div>
-                                {{ form.no_of_nights }}
-                                {% for error in form.no_of_nights.errors %}
-                                    <div class="text-danger small">{{ error }}</div>
-                                {% endfor %}
-                            </div>
-                        </div>
+{#                        <div class="col mb-2">#}
+{#                            <label for="{{ form.no_of_nights.id_for_label }}" class="form-label">Počet nocí</label>#}
+{#                            <div>#}
+{#                                {{ form.no_of_nights }}#}
+{#                                {% for error in form.no_of_nights.errors %}#}
+{#                                    <div class="text-danger small">{{ error }}</div>#}
+{#                                {% endfor %}#}
+{#                            </div>#}
+{#                        </div>#}
                     </div>
 
                     <div class="row mb-2">
@@ -146,7 +146,7 @@
                     </div>
 
                     <div class="row mb-2">
-                        <div class="col mb-2">
+                        <div class="col-4 mb-2">
                             <label for="{{ form.no_of_rooms.id_for_label }}" class="form-label">Počet pokojů</label>
                             <div>
                                 {{ form.no_of_rooms }}

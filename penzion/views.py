@@ -51,7 +51,7 @@ class ReservationView(FormView):
             f"Telefon: {data['phone']}\n"
             f"Datum příjezdu: {data['arrive_date']}\n"
             f"Datum odjezdu: {data['departure_date']}\n"
-            f"Počet nocí: {data['no_of_nights']}\n"
+            # f"Počet nocí: {data['no_of_nights']}\n"
             f"Počet dospělých: {data['no_of_adults']}\n"
             f"Počet dětí: {data['no_of_kids'] or 0}\n"
             f"Počet pokojů: {data['no_of_rooms']}\n"

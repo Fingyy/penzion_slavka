@@ -1,3 +1,4 @@
+// Pokoje
 document.addEventListener("DOMContentLoaded", function () {
   const swiper = new Swiper('.gallery-swiper', {
     slidesPerView: 3,
