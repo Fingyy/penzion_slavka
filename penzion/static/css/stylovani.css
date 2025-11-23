@@ -1,20 +1,58 @@
-/*---------------------------Navbar---------------------------------------*/
+/* ------------------ Navbar ---------------------- */
 .custom-navbar {
     background-color: #0A0E60;
     color: white;
 }
 
-.custom-navbar .icon-bar a i {
+.navbar .nav-link {
+    font-size: 1.25rem;
     color: white;
 }
 
-.custom-navbar .icon-bar a:hover i {
-    color: #ddd; /* třeba světlejší při hoveru */
+.navbar .nav-link:hover {
+    color: #ddd;
+    box-shadow: inset 0 -2px 0 #fff;
 }
 
+.navbar .nav-link.active {
+    font-weight: bold;
+    box-shadow: inset 0 -2px 0 #fff;
+    color: #fff;
+}
+
+.navbar .nav-link i {
+    font-size: 1.3rem;
+}
 
 #img-tip {
     width: 400px;
+}
+
+
+/*---------------------------Ubytování---------------------------------------*/
+.condition-box {
+    border: 1px solid #0A0E60 !important;
+    border-radius: 12px;
+    background: #fff;
+}
+
+/* Přerušovaná čára */
+.condition-divider {
+    border-top: 1px solid #0A0E60;
+    border-image: linear-gradient(
+            to right,
+            transparent 0%,
+            #0A0E60 15%,
+            #0A0E60 85%,
+            transparent 100%
+    ) 1;
+}
+
+.condition-icon {
+    width: 24px;
+    height: 24px;
+    color: #0A0E60;
+    margin-right: 10px;
 }
 
 /*---------------------------Cenik---------------------------------------*/
@@ -48,15 +86,15 @@ tbody {
 
 /*---------------------------Fotogalerie-------------------------------------*/
 .gallery-img {
-  border-radius: 6px;
-  cursor: pointer; /* změna kurzoru na ruku při najetí */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 6px;
+    cursor: pointer; /* změna kurzoru na ruku při najetí */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery-img:hover {
-  transform: scale(1.05); /* obrázek se zvětší o 5 % */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* jemný stín pro zvýraznění */
-  z-index: 2; /* zajistí, že se obrázek dostane nad ostatní */
+    transform: scale(1.05); /* obrázek se zvětší o 5 % */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* jemný stín pro zvýraznění */
+    z-index: 2; /* zajistí, že se obrázek dostane nad ostatní */
 }
 
 .lightbox {
@@ -95,6 +133,7 @@ tbody {
     transition: color 0.3s ease;
     z-index: 1100;
 }
+
 .close:hover {
     color: #ff5555;
 }
@@ -126,6 +165,7 @@ tbody {
     transition: color 0.3s ease, transform 0.2s ease;
     z-index: 1100;
 }
+
 .arrow:hover {
     color: #ffd700;
     transform: translateY(-50%) scale(1.2);
@@ -135,6 +175,7 @@ tbody {
 .arrow.left {
     left: 60px;
 }
+
 .arrow.right {
     right: 60px;
 }
@@ -145,10 +186,12 @@ tbody {
         font-size: 40px;
         padding: 10px;
     }
+
     .close {
         font-size: 36px;
         right: 20px;
     }
+
     .counter {
         font-size: 18px;
         left: 15px;

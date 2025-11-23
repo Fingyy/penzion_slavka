@@ -33,6 +33,10 @@ class FotogalerieView(TemplateView):
     template_name = 'fotogalerie.html'
 
 
+class UbytovaniView(TemplateView):
+    template_name = 'ubytovani.html'
+
+
 class ReservationView(FormView):
     template_name = 'rezervace.html'
     form_class = ReservationForm
