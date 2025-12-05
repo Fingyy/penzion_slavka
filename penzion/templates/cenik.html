@@ -1,70 +1,103 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Kontakt{% endblock %}
+{% block title %}Ceník{% endblock %}
 {% block content %}
-    <div class="container-sm my-5">
-        <div class="text-center mb-4">
-            <h2>Ceník</h2>
-            <h5>Můžeme ubytovat až 36 osob v 11 pokojích.</h5>
+
+    <div class="cenik-wrapper py-5">
+        <div class="container-sm">
+
+            <div class="cenik-card card shadow-sm border-0 mx-auto">
+                <div class="card-body p-4 p-md-5">
+
+                    <div class="text-center mb-4">
+                        <h2 class="fw-bold mb-2">Ceník ubytování</h2>
+                        <p class="text-muted mb-0">
+                            Ubytujeme až <strong>36 osob</strong> v <strong>11 pokojích</strong>.
+                        </p>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table mb-0 align-middle cenik-table">
+                            <tbody>
+
+                            <tr>
+                                <td class="cenik-item">
+                                    <div class="cenik-title">Dvoulůžkový pokoj – 1 osoba / 1 noc</div>
+                                    <div class="cenik-note">Cena platí po celou dobu pobytu</div>
+                                </td>
+                                <td class="cenik-price text-end">795 Kč</td>
+                            </tr>
+
+                            <tr>
+                                <td class="cenik-item">
+                                    <div class="cenik-title">Dvoulůžkový pokoj – 2 osoby / 1 noc</div>
+                                    <div class="cenik-note">Cena za 1 osobu</div>
+                                </td>
+                                <td class="cenik-price text-end">750 Kč</td>
+                            </tr>
+
+                            <tr>
+                                <td class="cenik-item">
+                                    <div class="cenik-title">Dvoulůžkový pokoj – 2 osoby / od 2 nocí</div>
+                                    <div class="cenik-note">Cena za 1 osobu</div>
+                                </td>
+                                <td class="cenik-price text-end">675 Kč</td>
+                            </tr>
+
+                            <tr>
+                                <td class="cenik-item">
+                                    <div class="cenik-title">Dítě do 3 let</div>
+                                    <div class="cenik-note">Bez nároku na lůžko</div>
+                                </td>
+                                <td class="cenik-price text-end text-success">Zdarma</td>
+                            </tr>
+
+                            <tr>
+                                <td class="cenik-item">
+                                    <div class="cenik-title">Děti 3 až 12 let / noc</div>
+                                    <div class="cenik-note">Včetně snídaně</div>
+                                </td>
+                                <td class="cenik-price text-end">375 Kč</td>
+                            </tr>
+
+                            <tr>
+                                <td class="cenik-item">
+                                    <div class="cenik-title">Dětská postýlka – zapůjčení / 1 den</div>
+                                </td>
+                                <td class="cenik-price text-end">50 Kč</td>
+                            </tr>
+
+                            <tr>
+                                <td class="cenik-item">
+                                    <div class="cenik-title">Ubytovací poplatek obci</div>
+                                    <div class="cenik-note">Platí osoby starší 18 let</div>
+                                </td>
+                                <td class="cenik-price text-end">10 Kč</td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="row mt-4 small text-muted">
+                        <div class="col-12 col-md-6">
+                            <ul class="mb-2 mb-md-0">
+                                <li>Ceny jsou smluvní.</li>
+                                <li>Snídaně je v ceně ubytování.</li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <ul class="mb-0">
+                                <li>Firemní ubytování dle dohody.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
-
-        <table class="table table-bordered table-striped text-center align-middle">
-            <tbody>
-            <tr>
-                <td class="text-start">
-                    Dvoulůžkový pokoj - 1 osoba / 1 noc
-                    <div class="small text-muted">cena platí po celou dobu pobytu</div>
-                </td>
-                <td class="text-end align-top">795 Kč</td>
-            </tr>
-
-            <tr>
-                <td class="text-start">Dvoulůžkový pokoj - 2 osoby / 1 noc / cena za 1 osobu</td>
-                <td class="text-end align-top">750 Kč</td>
-            </tr>
-
-            <tr>
-                <td class="text-start">Dvoulůžkový pokoj - 2 osoby / od 2 nocí / cena za 1 osobu</td>
-                <td class="text-end align-top">675 Kč</td>
-            </tr>
-
-            <tr>
-                <td class="text-start">
-                    Dítě do 3 let
-                    <div class="small text-muted">bez nároku na lůžko</div>
-                </td>
-                <td class="text-end align-top">Zdarma</td>
-            </tr>
-
-            <tr>
-                <td class="text-start">
-                    Děti 3 až 12 let / noc
-                    <div class="small text-muted">včetně snídaně</div>
-                </td>
-                <td class="text-end align-top">375 Kč</td>
-            </tr>
-
-            <tr>
-                <td class="text-start">Dětská postýlka zapůjčení / 1 den</td>
-                <td class="text-end align-top">50 Kč</td>
-            </tr>
-
-            <tr>
-                <td class="text-start">
-                    Ubytovací poplatek obci
-                    <div class="small text-muted">platí osoby starší 18 let</div>
-                </td>
-                <td class="text-end align-top">10 Kč</td>
-            </tr>
-
-            </tbody>
-        </table>
-
-        <div class="fw-semibold">Ceny jsou smluvní.</div>
-        <div class="fw-semibold">Snídaně je v cenně ubytování.</div>
-        <div class="fw-semibold">Firemní ubytování dle dohody.</div>
-
     </div>
 
 {% endblock %}

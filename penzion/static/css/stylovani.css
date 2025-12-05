@@ -56,13 +56,46 @@
 }
 
 /*---------------------------Cenik---------------------------------------*/
-tbody {
-    background: linear-gradient(to bottom, #4967cf, #b5c3fa);
+.cenik-wrapper {
+    background: #f3f4f6;
 }
 
-.price_description {
-    font-size: 8px;
+.cenik-card {
+    max-width: 900px;
+    border-radius: 24px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
+
+/* Tabulka uvnitř karty */
+.cenik-table tbody tr {
+    border-bottom: 1px solid #e5e7eb;  /* jemná linka mezi řádky */
+}
+
+.cenik-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.cenik-item {
+    padding-left: 0;
+}
+
+.cenik-title {
+    font-weight: 600;
+}
+
+.cenik-note {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-top: 0.15rem;
+}
+
+.cenik-price {
+    font-weight: 600;
+    white-space: nowrap;
+    min-width: 80px;
+}
+
 
 /*---------------------------Pokoje-------------------------------------*/
 /* galerie má vlastní maximální šířku */
