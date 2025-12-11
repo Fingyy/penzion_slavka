@@ -2,35 +2,79 @@
 {% load static %}
 
 {% block title %}Kontakt{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock %}
+
 {% block content %}
-    <div class="container text-left">
-        <h2 class="text-center pb-2">Kontakt</h2>
-        <div class="row">
-            <div class="col-4">
-                <address>
-                    <h4>Penzion Slávka</h4>
-                    Vestec u Běstviny 16<br>
-                    538 43 Třemošnice<br>
-                    <p>
-                        <i class="bi bi-telephone-fill"></i> +420 731 488 405 <br>
-                        <i class="bi bi-envelope-fill"></i> tova.tremosnice@seznam.cz
-                    </p>
-                </address>
-                <address>
-                    <h3>Provozovatel</h3>
-                    <h4>TOVA Třemošnice s.r.o.</h4>
-                    Budovatelů 440<br>
-                    538 43 Třemošnice<br>
-                    <div>IČO: 26007321</div>
-                </address>
+<div class="contact-page container py-4">
+  <h2 class="contact-title text-center pb-3">Kontakt</h2>
 
-
-            </div>
-            <div class="col-8">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8319.71485884764!2d15.583889108751976!3d49.84086951281098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470c4cef0defa69b%3A0xfba080d0260ace1c!2sPenzion%20Sl%C3%A1vka!5e1!3m2!1scs!2scz!4v1758479395441!5m2!1scs!2scz"
-                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+  <div class="row gy-4">
+    <div class="col-12 col-lg-5 contact-col--info">
+      <div class="card contact-card">
+        <div class="contact-card__header d-flex justify-content-between align-items-start mb-2">
+          <div>
+            <h4 class="contact-card__name mb-0">Penzion Slávka</h4>
+            <div class="contact-card__address small-note">Vestec u Běstviny 16, 538 43 Třemošnice</div>
+          </div>
+          <div class="text-end">
+            <a class="btn btn-sm btn-accent" href="tel:+420731488405" aria-label="Zavolat na Penzion Slávka">
+              <i class="bi bi-telephone-fill"></i> Zavolat
+            </a>
+          </div>
         </div>
+
+        <div class="contact-card__body mt-3">
+          <div class="contact-item">
+            <span class="label">Telefon</span>
+            <a href="tel:+420731488405" class="contact-link">+420 731 488 405</a>
+          </div>
+
+          <div class="contact-item">
+            <span class="label">E-mail</span>
+            <a href="mailto:tova.tremosnice@seznam.cz" class="contact-link">tova.tremosnice@seznam.cz</a>
+          </div>
+
+          <hr>
+
+          <h5 class="mb-1">Provozovatel</h5>
+          <div class="small-note">TOVA Třemošnice s.r.o.</div>
+          <div class="mt-2">
+            <div class="contact-card__address">Budovatelů 440, 538 43 Třemošnice</div>
+            <div>IČO: <strong>26007321</strong></div>
+          </div>
+
+          <div class="mt-3 contact-card__ctas">
+            <a class="btn btn-outline-secondary btn-sm me-2" href="{% url 'ubytovani' %}">O nás</a>
+            <a class="btn btn-outline-secondary btn-sm" href="{% url 'rezervace' %}">Rezervace</a>
+          </div>
+
+          <p class="small-note mt-3">Tip: na mobilu klikněte na „Zavolat“ — okamžitě vytočí číslo. Mapa vedle ukazuje 
+              přesnou polohu.</p>
+        </div>
+      </div>
     </div>
+
+    <div class="col-12 col-lg-7 contact-col--map">
+      <div class="map-wrapper">
+        <div class="map-ratio">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8319.71485884764!2d15.583889108751976!3d49.84086951281098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470c4cef0defa69b%3A0xfba080d0260ace1c!2sPenzion%20Sl%C3%A1vka!5e1!3m2!1scs!2scz!4v1758479395441!5m2!1scs!2scz"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            aria-label="Mapa - Penzion Slávka"
+            title="Mapa - Penzion Slávka"></iframe>
+        </div>
+      </div>
+
+      <div class="mt-3 d-lg-none small-note">
+        <strong>Adresa:</strong> Vestec u Běstviny 16, 538 43 Třemošnice<br>
+        <strong>Parkování:</strong> parkování u penzionu / krátká dostupnost z hlavní silnice.
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}

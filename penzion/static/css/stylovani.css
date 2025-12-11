@@ -55,9 +55,22 @@
     margin-right: 10px;
 }
 
+.lead-text {
+    font-size: 1.05rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* aby seznamy v těchto blocích nepůsobily moc rozhozeně */
+.lead-text ul {
+    margin-bottom: 0;
+    padding-left: 1.2rem;
+}
+
+
 /*---------------------------Cenik---------------------------------------*/
 .cenik-wrapper {
-    background: #f3f4f6;
+    background: white;
 }
 
 .cenik-card {
@@ -86,7 +99,7 @@
 
 .cenik-note {
     font-size: 0.875rem;
-    color: #6b7280;
+    color: #525d73;
     margin-top: 0.15rem;
 }
 
@@ -230,4 +243,89 @@
         left: 15px;
         top: 15px;
     }
+}
+
+
+/*---------------------------Kontakt-------------------------------------*/
+/* contact.css - scope within .contact-page to avoid kolize s ostatními šablonami */
+.contact-page {
+  --accent: #2b6cb0;
+  --muted: #6b7280;
+  --card-bg: #ffffff;
+  --page-bg: #f7fafc;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #111827;
+}
+
+.contact-title {
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+/* card */
+.contact-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(15,23,42,0.06);
+  padding: 1.25rem;
+}
+
+/* header */
+.contact-card__header {}
+.contact-card__name { font-size: 1.125rem; }
+.contact-card__address { color: var(--muted); font-size: 0.95rem; }
+
+/* contact items */
+.contact-item { margin-bottom: 0.75rem; }
+.label { display: block; font-weight: 600; color: var(--muted); font-size: 0.9rem; }
+.contact-link { display: inline-block; margin-top: 0.15rem; }
+
+/* cta button (accent) */
+.btn-accent {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.45rem 0.8rem;
+  text-decoration: none;
+}
+.btn-accent:focus { outline: none; box-shadow: 0 0 0 4px rgba(43,108,176,0.15); }
+
+/* map wrapper & ratio to be responsive */
+.map-wrapper { border-radius: 10px; overflow: hidden; box-shadow: 0 6px 18px rgba(15,23,42,0.06); }
+.map-ratio { position: relative; width: 100%; height: 0; padding-bottom: 75%; /* 4:3 */
+  background: #e9eef5;
+}
+.map-ratio iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* drobné poznámky */
+.small-note { color: var(--muted); font-size: 0.9rem; }
+
+/* responzivita - odřezáváme paddingy mezi sloupci */
+@media (min-width: 992px) {
+  .contact-col--info { padding-right: 1rem; }
+  .contact-col--map { padding-left: 1rem; }
+}
+
+/* tisk */
+@media print {
+  .contact-page * { color: #000 !important; background: none !important; box-shadow: none !important; }
+  .map-wrapper, .contact-card__ctas { display: none !important; } /* netiskneme mapu/CTA */
+}
+
+/* malé vylepšení - accessibility focus */
+a:focus, button:focus { outline: none; box-shadow: 0 0 0 3px rgba(43,108,176,0.12); }
+
+/* drobná úprava pro větší texty na mobilu */
+@media (max-width: 575.98px) {
+  .contact-card { padding: 1rem; }
+  .contact-title { font-size: 1.5rem; }
 }
