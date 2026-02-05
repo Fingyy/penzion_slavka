@@ -157,6 +157,18 @@ a:focus, button:focus {
     }
 }
 
+.intro-video {
+    padding: 3rem 0;             /* odsazení od carouselu */
+    text-align: center;          /* centrování videa */
+}
+
+.intro-video video {
+    max-width: 600px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+
 /*---------------------------Ubytování---------------------------------------*/
 .condition-box {
     border: 1px solid #0A0E60 !important;
