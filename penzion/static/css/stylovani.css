@@ -58,13 +58,13 @@
     font-family: "Merriweather", serif;
     font-size: 3rem;
     margin: 0 0 .4rem 0;
-    color: #0A0E60;
+    color: yellow;
 }
 
 .hero__subtitle {
     font-size: 1.125rem;
     margin-bottom: 1rem;
-    color: #0A0E60;
+    color: yellow;
 }
 
 .btn--lg {
@@ -444,7 +444,25 @@ a:focus, button:focus {
 
 .contact-link {
     display: block;
+    align-items: center;
+    gap: 0.4rem;               /* mezera mezi ikonou a textem */
     margin-top: 0.15rem;
+    color: inherit;            /* převezme barvu textu */
+    text-decoration: none;     /* bez podtržení */
+    font-weight: 500;
+}
+
+.contact-link:visited {
+    color: inherit;
+}
+
+.contact-link:hover {
+    text-decoration: underline; /* jemný moderní hover efekt */
+}
+
+.contact-icon {
+    font-size: 1.1em;          /* velikost jen trochu větší než text */
+    opacity: 0.75;             /* jemnější vzhled ikony */
 }
 
 .primary-phone {
