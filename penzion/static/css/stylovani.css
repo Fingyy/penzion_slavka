@@ -58,13 +58,13 @@
     font-family: "Merriweather", serif;
     font-size: 3rem;
     margin: 0 0 .4rem 0;
-    color: yellow;
+    color: #00ff99;
 }
 
 .hero__subtitle {
     font-size: 1.125rem;
     margin-bottom: 1rem;
-    color: yellow;
+    color: #00ff99;
 }
 
 .btn--lg {
