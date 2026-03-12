@@ -418,8 +418,8 @@ a:focus, button:focus {
 }
 
 /* header */
-.contact-card__header {
-}
+/* .contact-card__header { */
+/* } */
 
 .contact-card__name {
     font-size: 1.125rem;
